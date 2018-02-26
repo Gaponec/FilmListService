@@ -21,13 +21,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="film in films">
-                <td>{{film.Title}}</td>
-                <td>{{film.Year}}</td>
-                <td>{{film.Released}}</td>
-                <td>{{film.Runtime}}</td>
-                <td>{{film.Genre}}</td>
-                <td>{{film.Director}}</td>
+            <tr ng-repeat="(key, film) in films">
+                <td>{{films[key].film.Title}}</td>
+                <td>{{films[key].film.Year}}</td>
+                <td>{{films[key].film.Released}}</td>
+                <td>{{films[key].film.Runtime}}</td>
+                <td>{{films[key].film.Genre}}</td>
+                <td>{{films[key].film.Director}}</td>
             </tr>
         </tbody>
     </table>
