@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>All films</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <script type="text/javascript" th:src="@{/js/angular.min.js}"/>
+    <script type="text/javascript" th:src="@{/js/films.js}"/>
+</head>
+<body ng-app="filmApp">
+<div class="container" ng-controller="filmCTRL">
+    <table class="table table-light">
+        <thead>
+            <tr>
+                <td>Title</td>
+                <td>Year</td>
+                <td>Released</td>
+                <td>Runtime</td>
+                <td>Genre</td>
+                <td>Director</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="film in films">
+                <td>{{film.Title}}</td>
+                <td>{{film.Year}}</td>
+                <td>{{film.Released}}</td>
+                <td>{{film.Runtime}}</td>
+                <td>{{film.Genre}}</td>
+                <td>{{film.Director}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
