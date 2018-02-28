@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <script th:inline="javascript">
+        var title = /*[[${title}]]*/ '';
+    </script>
+    <script type="text/javascript" th:src="@{/js/angular.min.js}"/>
+    <script type="text/javascript" th:src="@{/js/films.js}"/>
+</head>
+<body ng-app="filmApp">
+
+<div class="container content-lg" ng-controller="filmCTRL">
+    <div class="row content">
+        <div class="col-sm-3">
+            <img ng-src="{{film.Poster}}"/>
+        </div>
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-2 text-right">
+                    Title
+                </div>
+                <div class="col-sm-10">
+                    {{film.Title}}
+                </div>
+
+                <div class="col-sm-2 text-right">
+                    Year
+                </div>
+                <div class="col-sm-10">
+                    {{film.Year}}
+                </div>
+
+                <div class="col-sm-2 text-right">
+                    Released
+                </div>
+                <div class="col-sm-10">
+                    {{film.Released}}
+                </div>
+
+                <div class="col-sm-2 text-right">
+                    Runtime
+                </div>
+                <div class="col-sm-10">
+                    {{film.Runtime}}
+                </div>
+
+                <div class="col-sm-2 text-right">
+                    Genre
+                </div>
+                <div class="col-sm-10">
+                    {{film.Genre}}
+                </div>
+
+                <div class="col-sm-2 text-right">
+                    Director
+                </div>
+                <div class="col-sm-10">
+                    {{film.Director}}
+                </div>
+
+                <div class="col-sm-2 text-right">
+                    Writer
+                </div>
+                <div class="col-sm-10">
+                    {{film.Writer}}
+                </div>
+
+                <div class="col-sm-2 text-right">
+                    Actors
+                </div>
+                <div class="col-sm-10">
+                    {{film.Actors}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

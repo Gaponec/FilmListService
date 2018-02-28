@@ -29,6 +29,10 @@ public class FilmService {
             throw new RuntimeException(String.format("Response status code was %s", response.getStatusCode()));
         }
 
+        System.out.println(response.getBody().getPlot());
+        //returns "N\A"
+        System.out.println(response.getBody().getPoster());
+
         return response.getBody();
     }
 }

@@ -8,7 +8,6 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @JsonRootName("film")
 public class Film {
     @JsonProperty("Title")
@@ -23,4 +22,18 @@ public class Film {
     private String genre;
     @JsonProperty("Director")
     private String director;
+    @JsonProperty("Writer")
+    private String writer;
+    @JsonProperty("Actors")
+    private String actors;
+    @JsonProperty("Plot")
+    private String plot;
+    @JsonProperty("Poster")
+    private String poster;
+    @JsonProperty("Language")
+    private String language;
+    @JsonProperty("Country")
+    private String country;
+    @JsonProperty("Awards")
+    private String awards;
 }
