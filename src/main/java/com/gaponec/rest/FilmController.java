@@ -6,7 +6,6 @@ import com.gaponec.domain.Film;
 import com.gaponec.dto.FilmDto;
 import com.gaponec.repository.FilmRepository;
 import com.gaponec.service.FilmService;
-import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class FilmController {
@@ -39,10 +37,10 @@ public class FilmController {
     @RequestMapping("/getFilms")
     @ResponseBody
     public String getAllFilms() throws JsonProcessingException {
-        List<FilmDto> films = filmRepository.findAll();
+        List<Film> films = filmRepository.findAll();
         List<String> strings = new ArrayList<>();
 
-        for (FilmDto film : films){
+        for (Film film : films){
             strings.add(objectMapper.writeValueAsString(filmService.getFilmInfoByName(film.getTitle())));
         }
 
@@ -59,8 +57,7 @@ public class FilmController {
     @ResponseBody
     public String getFilm(@RequestParam(value = "title", defaultValue = "Rift") String title) throws JsonProcessingException {
 
-        Film film = filmService.getFilmInfoByName(title);
-        System.out.println(film.getPoster());
+        FilmDto film = filmService.getFilmInfoByName(title);
 
         return objectMapper.writeValueAsString(film);
     }

@@ -23,3 +23,7 @@ app.controller("filmCTRL", function ($scope,$http) {
         console.log($scope.film);
     });
 });
+
+$(function () {
+    $("#includeHeader").load("elements/header.html");
+});

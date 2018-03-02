@@ -1,39 +1,33 @@
 package com.gaponec.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonRootName;
-import lombok.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@JsonRootName("film")
+@Entity
+@Table(name = "films")
 public class Film {
-    @JsonProperty("Title")
+    @Id
+    @Column(name = "id")
+    private long id;
+
+    @Column(name = "film_title")
     private String title;
-    @JsonProperty("Year")
-    private int year;
-    @JsonProperty("Released")
-    private String released;
-    @JsonProperty("Runtime")
-    private String runtime;
-    @JsonProperty("Genre")
-    private String genre;
-    @JsonProperty("Director")
-    private String director;
-    @JsonProperty("Writer")
-    private String writer;
-    @JsonProperty("Actors")
-    private String actors;
-    @JsonProperty("Plot")
-    private String plot;
-    @JsonProperty("Poster")
-    private String poster;
-    @JsonProperty("Language")
-    private String language;
-    @JsonProperty("Country")
-    private String country;
-    @JsonProperty("Awards")
-    private String awards;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }

@@ -1,4 +1,4 @@
-package com.gaponec;
+package com.gaponec.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;

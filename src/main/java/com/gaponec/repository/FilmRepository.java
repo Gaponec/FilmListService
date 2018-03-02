@@ -1,14 +1,14 @@
 package com.gaponec.repository;
 
-import com.gaponec.dto.FilmDto;
+import com.gaponec.domain.Film;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface FilmRepository extends JpaRepository<FilmDto, String>{
+public interface FilmRepository extends JpaRepository<Film, String>{
     @Override
-    List<FilmDto> findAll();
+    List<Film> findAll();
 
     @Override
-    FilmDto getOne(String name);
+    Film getOne(String name);
 }

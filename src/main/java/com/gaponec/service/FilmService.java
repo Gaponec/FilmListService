@@ -1,6 +1,6 @@
 package com.gaponec.service;
 
-import com.gaponec.domain.Film;
+import com.gaponec.dto.FilmDto;
 import com.google.common.collect.ImmutableMap;
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,17 +21,13 @@ public class FilmService {
     @Autowired
     private RestTemplate restTemplate;
 
-    public Film getFilmInfoByName(@NonNull String name){
-        ResponseEntity<Film> response =
-                restTemplate.getForEntity(suggestionURL, Film.class, ImmutableMap.of("name", name, "apikey", apiKey));
+    public FilmDto getFilmInfoByName(@NonNull String name){
+        ResponseEntity<FilmDto> response =
+                restTemplate.getForEntity(suggestionURL, FilmDto.class, ImmutableMap.of("name", name, "apikey", apiKey));
 
         if(response.getStatusCode() != HttpStatus.OK){
             throw new RuntimeException(String.format("Response status code was %s", response.getStatusCode()));
         }
-
-        System.out.println(response.getBody().getPlot());
-        //returns "N\A"
-        System.out.println(response.getBody().getPoster());
 
         return response.getBody();
     }
